@@ -1,4 +1,3 @@
-// components/skills.tsx
 import { Card, CardContent } from "@/components/ui/card";
 import {
   SiHtml5,

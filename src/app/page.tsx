@@ -1,4 +1,3 @@
-// app/page.tsx
 import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import LogoShowcase from "@/components/logo-showcase";

@@ -1,4 +1,3 @@
-// components/experience.tsx
 import { Card, CardContent } from "@/components/ui/card";
 
 const experiences = [

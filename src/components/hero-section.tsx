@@ -1,4 +1,3 @@
-// components/hero-section.tsx
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Twitter, Dribbble } from "lucide-react";
 import Image from "next/image";

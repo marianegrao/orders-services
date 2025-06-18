@@ -1,4 +1,3 @@
-// components/stats-bar.tsx
 const stats = [
   { value: "10+", label: "Years Experience" },
   { value: "150+", label: "Projects Done" },

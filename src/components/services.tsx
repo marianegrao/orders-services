@@ -1,4 +1,3 @@
-// components/services.tsx
 import { Card, CardContent } from "@/components/ui/card";
 import { Code2, Palette, Lightbulb } from "lucide-react";
 
