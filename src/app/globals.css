@@ -1,4 +1,121 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant dark (&:is(.dark *));
+@layer base {
+  :root {
+    --background: 252 2% 5%;
+    --foreground: 240 5% 96%;
+    --card: 252 2% 8%;
+    --card-foreground: 240 5% 96%;
+    --popover: 252 2% 8%;
+    --popover-foreground: 240 5% 96%;
+    --primary: 267 84% 62%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 50% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 5% 64%;
+    --muted-foreground: 240 5% 64%;
+    --accent: 267 84% 62%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 240 5% 96%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 267 84% 62%;
+    --radius: 0.5rem;
+
+    --base-bg-dark: #080313;
+    --base-bg-light: #f0f2f5;
+  }
+
+  .light {
+    --background: 220 14% 96%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 258 55% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 258 30% 65%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 33%;
+    --muted-foreground: 0 0% 33%;
+    --accent: 258 55% 59%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 258 55% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    background-color: var(--base-bg-dark);
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.7;
+    font-size: 16px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(
+        ellipse at 30% 20%,
+        rgba(138, 63, 252, 0.12) 0%,
+        transparent 45%
+      ),
+      radial-gradient(
+        ellipse at 70% 80%,
+        rgba(100, 50, 200, 0.08) 0%,
+        transparent 40%
+      );
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .light body {
+    background-color: var(--base-bg-light);
+  }
+
+  .light body::before {
+    background: radial-gradient(
+        ellipse at top left,
+        rgba(94, 53, 177, 0.08) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at bottom right,
+        rgba(94, 53, 177, 0.04) 0%,
+        transparent 50%
+      );
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    @apply backdrop-blur-md bg-card/35 border border-border/15 shadow-lg;
+  }
+
+  .glass-effect-hover {
+    @apply hover:shadow-primary/20 hover:border-border/25 transition-all duration-300;
+  }
+}
